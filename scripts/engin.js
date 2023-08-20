@@ -6,9 +6,7 @@ let innerTextToNum = (id) => {
     return num;
 }
 
-// button operations
-let btnApply = document.getElementById('btnApply');
-btnApply.disabled = true;
+
 
 // reUseable function onclick 
 let myUniversalFunc = (id) => {
@@ -32,5 +30,8 @@ let myUniversalFunc = (id) => {
 
     let total = itemPriceNumber + totalPriceNum;
     totalPrice.innerText = total.toFixed(2);
+
+    //task 03 button opt
+
 
 }
