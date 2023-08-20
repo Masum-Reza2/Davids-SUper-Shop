@@ -6,13 +6,6 @@ let innerTextToNum = (id) => {
     return num;
 }
 
-//function inputValueToNum Maker
-// let inputToNumMaker = (id) =>{
-//     let idName = document.getElementById(id);
-//     let text = idName.value;
-//     let num = Number.parseFloat(text);
-//     return num;
-// }
 
 //errorHandler 
 let errorHandler = () => {
@@ -23,7 +16,6 @@ let errorHandler = () => {
         errorMessage.classList.add('hidden');
     }, 2000);
 }
-
 
 
 // reUseable function onclick for my each cards
@@ -69,6 +61,11 @@ let myUniversalFunc = (id) => {
                 errorHandler()
             }
         }))
+    }
+
+    else if(selectedItemsParent.childElementCount > 0){
+        let btnPurchase = document.getElementById('btnPurchase');
+        btnPurchase.classList.remove('btn-disabled');
     }
 
 }

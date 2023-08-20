@@ -43,13 +43,14 @@
         </section>
         <!-- banner section -->
         <!-- error message -->
-        <div id="errorMessag" class="alert alert-warning max-w-7xl -translate-y-56 md:-translate-y-28 fixed font-bold z-50 hidden">
+        <div id="errorMessag"
+            class="alert alert-warning max-w-7xl -translate-y-56 md:-translate-y-28 fixed font-bold z-50 hidden">
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6 " fill="none"
                 viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
-            <span >Warning: Please Provide a Valid Coupon!</span>
+            <span>Warning: Please Provide a Valid Coupon!</span>
         </div>
     </header>
 
@@ -285,13 +286,13 @@
 
                     <div class="p-5 shadow-lg rounded-lg space-y-3 px-1  ">
                         <!-- cupon here -->
-                        <h1 class="font-semibold">Have coupon?</h1>
-                        <div class="flex items-center">
+                        <h1 class="font-semibold md:text-center lg:text-justify">Have coupon?</h1>
+                        <div class="flex items-center md:flex-col md:space-y-2 lg:flex-row lg:space-y-0">
                             <input class="border rounded-md w-32 px-1 py-3 text-sm focus:outline-none" type="text"
                                 name="" id="couponText" placeholder="Coupon code">
 
                             <button id="btnApply"
-                                class="text-white bg-[#E527B2] hover:bg-[#f355c9] cursor-pointer h-10 btn btn-md p-0 w-16 btn-disabled">Apply</button>
+                                class="text-white bg-[#E527B2] hover:bg-[#f355c9] cursor-pointer h-10 btn btn-md p-0 w-16 btn-disabled capitalize">Apply</button>
                         </div>
                     </div>
 
@@ -310,12 +311,23 @@
                             <p>Total: <span class="text-gray-500"><span id="grandTotal">00.00</span> TK</span></p>
                         </div>
 
-                        <div class="w-full mx-auto border-t mt-2"></div>
+                        <div class="w-full mx-auto border-t mt-2 pb-5"></div>
 
-                        <div class="w-full flex justify-center">
-                            <button
-                                class="text-white bg-[#E527B2] w-[90%] font-bold py-2 rounded-lg translate-y-10 hover:scale-105 transition-all duration-100 active:scale-110 ">Make
-                                Purchase</button>
+                        <div class="w-full flex justify-center relative">
+                            <!-- Open the modal using ID.showModal() method -->
+                            <button id="btnPurchase" class="btn btn-disabled bg-[#E527B2] hover:bg-[#E527B2]
+                            no-animation absolute text-white capitalize" onclick="my_modal_1.showModal()">Make Purchase</button>
+                            <dialog id="my_modal_1" class="modal">
+                                <form method="dialog" class="modal-box">
+                                    <h3 class="font-bold text-lg">Hello!</h3>
+                                    <p class="py-4">Press ESC key or click the button below to close</p>
+                                    <div class="modal-action">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close</button>
+                                    </div>
+                                </form>
+                            </dialog>
+
                         </div>
 
                     </div>
