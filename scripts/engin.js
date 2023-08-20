@@ -6,9 +6,17 @@ let innerTextToNum = (id) => {
     return num;
 }
 
+//function inputValueToNum Maker
+let inputToNumMaker = (id) =>{
+    let idName = document.getElementById(id);
+    let text = idName.value;
+    let num = Number.parseFloat(text);
+    return num;
+}
 
 
-// reUseable function onclick 
+
+// reUseable function onclick for my each cards
 let myUniversalFunc = (id) => {
     let idName = document.getElementById(id);
 
@@ -32,6 +40,22 @@ let myUniversalFunc = (id) => {
     totalPrice.innerText = total.toFixed(2);
 
     //task 03 button opt
+    let btnApply = document.getElementById('btnApply');
+    let discountAmount = document.getElementById('discountAmount');
+    let couponText = document.getElementById('couponText');
+    let grandTotal = document.getElementById('grandTotal');
 
+    if(total > 200){
+        btnApply.classList.remove('btn-disabled');
+        btnApply.addEventListener('click', (()=>{
+            if(couponText.value === 'SELL200'){
+                let priceDisc = (total/100)*20;
+                discountAmount.innerText = priceDisc.toFixed(2);
+
+                let grandTotalPrice = total - priceDisc
+                grandTotal.innerText = grandTotalPrice.toFixed(2);
+            }
+        }))
+    }
 
 }
