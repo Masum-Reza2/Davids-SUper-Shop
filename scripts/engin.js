@@ -7,11 +7,20 @@ let innerTextToNum = (id) => {
 }
 
 //function inputValueToNum Maker
-let inputToNumMaker = (id) =>{
-    let idName = document.getElementById(id);
-    let text = idName.value;
-    let num = Number.parseFloat(text);
-    return num;
+// let inputToNumMaker = (id) =>{
+//     let idName = document.getElementById(id);
+//     let text = idName.value;
+//     let num = Number.parseFloat(text);
+//     return num;
+// }
+
+//errorHandler 
+let errorHandler = () => {
+    let errorMessag = document.getElementById('errorMessag');
+    errorMessag.classList.toggle('hidden');
+    setTimeout(() => {
+        errorMessag.classList.toggle('hidden');
+    }, 2000);
 }
 
 
@@ -45,15 +54,18 @@ let myUniversalFunc = (id) => {
     let couponText = document.getElementById('couponText');
     let grandTotal = document.getElementById('grandTotal');
 
-    if(total > 200){
+    if (total > 200) {
         btnApply.classList.remove('btn-disabled');
-        btnApply.addEventListener('click', (()=>{
-            if(couponText.value === 'SELL200'){
-                let priceDisc = (total/100)*20;
+        btnApply.addEventListener('click', (() => {
+            if (couponText.value === 'SELL200') {
+                let priceDisc = (total / 100) * 20;
                 discountAmount.innerText = priceDisc.toFixed(2);
 
                 let grandTotalPrice = total - priceDisc
                 grandTotal.innerText = grandTotalPrice.toFixed(2);
+            }
+            else {
+                errorHandler()
             }
         }))
     }
