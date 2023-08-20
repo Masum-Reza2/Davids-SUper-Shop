@@ -16,10 +16,11 @@ let innerTextToNum = (id) => {
 
 //errorHandler 
 let errorHandler = () => {
-    let errorMessag = document.getElementById('errorMessag');
-    errorMessag.classList.toggle('hidden');
+    console.log('function clicked')
+    let errorMessage = document.getElementById('errorMessag');
+    errorMessage.classList.remove('hidden');
     setTimeout(() => {
-        errorMessag.classList.toggle('hidden');
+        errorMessage.classList.add('hidden');
     }, 2000);
 }
 
