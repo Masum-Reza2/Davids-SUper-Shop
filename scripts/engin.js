@@ -9,7 +9,6 @@ let innerTextToNum = (id) => {
 
 //errorHandler 
 let errorHandler = () => {
-    console.log('function clicked')
     let errorMessage = document.getElementById('errorMessag');
     errorMessage.classList.remove('hidden');
     setTimeout(() => {
