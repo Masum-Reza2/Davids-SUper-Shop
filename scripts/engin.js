@@ -36,15 +36,16 @@ let myUniversalFunc = (id) => {
     let totalPrice = document.getElementById('totalPrice');
     //here i called my build function
     let totalPriceNum = innerTextToNum('totalPrice');
+    let grandTotal = document.getElementById('grandTotal');
 
     let total = itemPriceNumber + totalPriceNum;
     totalPrice.innerText = total.toFixed(2);
+    grandTotal.innerText = total.toFixed(2);
 
     //task 03 button opt
     let btnApply = document.getElementById('btnApply');
     let discountAmount = document.getElementById('discountAmount');
     let couponText = document.getElementById('couponText');
-    let grandTotal = document.getElementById('grandTotal');
 
     if (total > 200) {
         btnApply.classList.remove('btn-disabled');
