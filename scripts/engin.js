@@ -13,7 +13,7 @@ let errorHandler = () => {
     errorMessage.classList.remove('hidden');
     setTimeout(() => {
         errorMessage.classList.add('hidden');
-    }, 2000);
+    }, 2500);
 }
 
 
