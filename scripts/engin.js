@@ -62,15 +62,20 @@ let myUniversalFunc = (id) => {
         }))
     }
 
-    else if(selectedItemsParent.childElementCount > 0){
-        let btnPurchase = document.getElementById('btnPurchase');
-        btnPurchase.classList.remove('btn-disabled');
-    }
-
 }
 
 
 // Modal button Go home operation
-document.getElementById('modalGoHome').addEventListener('click', (()=>{
+document.getElementById('modalGoHome').addEventListener('click', (() => {
     window.location.href = 'index.html'
 }))
+
+
+// function for purchasebtnAnable
+let selectedItemsParent = document.getElementById('selectedItemsParent');
+let purchaseAnable = () => {
+    if (selectedItemsParent.childElementCount > 0) {
+        let btnPurchase = document.getElementById('btnPurchase');
+        btnPurchase.classList.remove('btn-disabled');
+    }
+}
